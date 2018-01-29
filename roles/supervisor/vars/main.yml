@@ -1,0 +1,4 @@
+---
+# vars file for supervisor
+npmStart: npmStart.conf
+config: /etc/supervisor/conf.d/npmStart.conf

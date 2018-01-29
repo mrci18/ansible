@@ -1,0 +1,23 @@
+---
+  - name: add apt key for nodesource
+    shell: > 
+          curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+
+  - name: Install nodejs
+    apt: name=nodejs state=latest update_cache=true 
+    become: true
+
+  - name: Install packages based on package.json. in client
+    shell: >
+          npm install
+    args:
+      chdir: "{{ client }}" 
+
+  - name: Install packages based on package.json. in server
+    shell: >
+          npm install
+    args:
+      chdir: "{{ server }}"
+
+#      "sudo apt-get -y install python2.7",
+#      "sudo ln -s /usr/bin/python2.7 /usr/bin/python"

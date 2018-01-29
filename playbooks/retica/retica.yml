@@ -1,0 +1,7 @@
+---
+  - name: Set up Retica environment on AWS
+    hosts: retica-cc
+    roles:
+     - git 
+     - node
+     - supervisor

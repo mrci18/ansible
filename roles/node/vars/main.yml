@@ -1,0 +1,4 @@
+---
+# vars file for node
+client: /home/ubuntu/Retica/client
+server: /home/ubuntu/Retica/server

@@ -1,0 +1,10 @@
+---
+# tasks file for supervisor
+  - name: Install supervisor
+    apt: name=supervisor
+    become: true
+
+  - name: Copy npmStart config file for supervisor
+    copy: src={{ npmStart }} dest=/etc/supervisor/conf.d/
+    become: true
+    notify: "Restart supervisorctl"

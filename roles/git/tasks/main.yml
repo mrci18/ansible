@@ -1,0 +1,8 @@
+---
+  - name: Install git
+    apt: name=git state=latest update_cache=true
+    become: true
+
+  - name: Clone retica repo
+    git: repo={{ repo }} dest={{ dest }} clone=yes force=yes
+
